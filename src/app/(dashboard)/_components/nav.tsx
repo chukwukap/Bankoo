@@ -36,7 +36,7 @@ function NavItem({ item }: { item: any }) {
         href={item.path}
         className={cn("flex  items-center capitalize gap-5 py-2")}
       >
-        {<item.icon />} <span>{item.name}</span>
+        {<item.icon />} <span className="hidden md:block">{item.name}</span>
       </Link>
     </li>
   );

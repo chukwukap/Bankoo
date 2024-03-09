@@ -17,44 +17,9 @@ export const sidebarNavItems = [
     icon: LucideHome,
   },
   {
-    name: "transactions",
-    path: "/transactions",
+    name: "active logins",
+    path: "/active-logins",
     icon: Bitcoin,
-  },
-  {
-    name: "accounts",
-    path: "/accounts",
-    icon: User2Icon,
-  },
-  {
-    name: "investments",
-    path: "/investments",
-    icon: SaveIcon,
-  },
-  {
-    name: "credit cards",
-    path: "/credit-cards",
-    icon: CreditCardIcon,
-  },
-  {
-    name: "loans",
-    path: "/loans",
-    icon: HandCoinsIcon,
-  },
-  {
-    name: "services",
-    path: "/services",
-    icon: ServerIcon,
-  },
-  {
-    name: "my privileges",
-    path: "/privileges",
-    icon: PictureInPicture,
-  },
-  {
-    name: "settings",
-    path: "/settings",
-    icon: Settings2Icon,
   },
 ];
 

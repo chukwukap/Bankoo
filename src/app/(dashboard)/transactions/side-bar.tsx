@@ -1,6 +1,6 @@
 import { cn } from "@/lib/utils";
 import React from "react";
-import RecentTransactions from "./recent-transactions";
+import RecentTransactions from "../home/_components/recent-transactions";
 
 function HomeSidebar({ className }: { className?: string }) {
   return (

@@ -7,7 +7,7 @@ import Image from "next/image";
 
 function Sidebar({ className }: { className?: string }) {
   return (
-    <aside className={cn(className, "h-full w-56 bg-foreground ")}>
+    <aside className={cn(className, "h-full  bg-foreground hidden sm:block ")}>
       <div>
         <div className="w-full h-20 flex items-center p-3 pl-7">
           <div className="w-full h-1/2 relative">

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Header from "./_components/header";
 import Sidebar from "./_components/sidebar";
 import { cn } from "@/lib/utils";
+import BreakPointIndicator from "./_components/break-point-indicator";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,10 +17,18 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <div className={cn("h-screen bg-background root-grid-container")}>
-          <Header className="border-l root-grid-container_header " />
-          <Sidebar className=" border-b h-full  root-grid-container_sidebar " />
-          <div className="p-4 root-grid-container_main">{children}</div>
+        <div
+          className={cn(
+            "grid grid-cols-[auto_1fr_1fr]  grid-rows-[auto_1fr_1fr] h-screen bg-background "
+          )}
+        >
+          {/* development only! */}
+          <BreakPointIndicator />
+          <Header className="col-start-2 col-end-4 row-span-1  border-l" />
+          <Sidebar className="col-start-1 col-end-2 row-span-full  border-b h-full  " />
+          <div className="col-start-2 col-end-4 row-start-2 row-end-4 p-4 sm:overflow-x-scroll">
+            {children}
+          </div>
         </div>
       </body>
     </html>

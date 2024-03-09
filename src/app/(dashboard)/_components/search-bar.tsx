@@ -1,12 +1,15 @@
 import React, { ChangeEvent, FC, KeyboardEvent, useRef, useState } from "react";
 import { SearchIcon } from "lucide-react";
+import { cn } from "@/lib/utils";
 interface SearchBarProps {
   placeholder?: string;
-  onSearch: (searchTerm: string) => Promise<void>;
+  className?: string;
+  onSearch?: (searchTerm: string) => Promise<void>;
 }
 
 const SearchBar: FC<SearchBarProps> = ({
   placeholder = "Search...",
+  className,
   onSearch,
 }) => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -35,7 +38,7 @@ const SearchBar: FC<SearchBarProps> = ({
   const performSearch = async () => {
     setIsLoading(true);
     try {
-      await onSearch(searchTerm);
+      if (onSearch) await onSearch(searchTerm);
     } catch (error) {
       console.error("Search error:", error);
     } finally {
@@ -44,7 +47,12 @@ const SearchBar: FC<SearchBarProps> = ({
   };
 
   return (
-    <div className="flex items-center px-2 w-full md:w-auto text-stone-500 bg-[#F5F7FA] rounded-3xl shadow-sm  transition-shadow duration-300 hover:shadow-lg">
+    <div
+      className={cn(
+        className,
+        "slex items-center px-2 w-full md:w-auto text-stone-500 sm:bg-red-500 bg-[#F5F7FA] rounded-3xl shadow-sm  transition-shadow duration-300 hover:shadow-lg"
+      )}
+    >
       <button
         type="button"
         className="p-2 bg-transparent border-none outline-none focus:outline-none transition-colors duration-200"

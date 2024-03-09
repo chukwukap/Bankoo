@@ -2,28 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-.root-grid-container {
-  display: grid;
-  grid-template-areas:
-    "sidebar header header"
-    "sidebar main main"
-    "sidebar main main";
-  /* Optional: Define the size of the grid columns and rows */
-  grid-template-columns: auto 1fr 1fr;
-  grid-template-rows: auto 1fr 1fr;
-}
-.root-grid-container_header {
-  grid-area: header;
-}
-
-.root-grid-container_sidebar {
-  grid-area: sidebar;
-}
-
-.root-grid-container_main {
-  grid-area: main;
-}
-
 /* home layout */
 .home-grid-container {
   display: grid;
